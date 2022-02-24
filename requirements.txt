@@ -9,7 +9,6 @@ cx_Oracle==8.3.0
 dj_database_url==0.5.0
 dl==0.1.0
 docutils==0.18.1
-elementtree==1.2.6-20050316
 HTMLParser==0.0.2
 ipdb==0.13.9
 ipython==8.0.1
