@@ -25,7 +25,7 @@ SECRET_KEY = 'verybadsecret!!!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-ALLOWED_HOSTS = ['django-vue-template.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['herobay.herokuapp.com', 'localhost']
 
 # Application definition
 
