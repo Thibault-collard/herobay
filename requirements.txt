@@ -6,7 +6,7 @@ configparser==5.2.0
 coreschema==0.0.4
 cryptography==36.0.0
 cx_Oracle==8.3.0
-Django==3.9.9
+Django==4.0.2
 dj_database_url==0.5.0
 dl==0.1.0
 docutils==0.18.1
