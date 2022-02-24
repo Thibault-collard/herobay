@@ -23,4 +23,4 @@ Pillow==9.0.1
 whitenoise==6.0.0
 psycopg2==2.9.3
 psycopg2_binary==2.9.3
-rest_framework==0.1.0
+django_rest_framework==0.1.0
