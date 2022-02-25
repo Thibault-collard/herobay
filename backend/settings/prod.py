@@ -8,19 +8,19 @@ from .dev import *
 # SECURITY #
 ############
 
-DEBUG = bool(os.getenv('DJANGO_DEBUG', ''))
+DEBUG = bool(os.environ.get('DJANGO_DEBUG', ''))
 
-SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', SECRET_KEY)
-DB_NAME = os.getenv('DJANGO_DB_NAME')
-DB_HOST = os.getenv('DJANGO_DB_HOST')
-DB_MECH = os.getenv('DJANGO_DB_MECH')
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', SECRET_KEY)
+DB_NAME = os.environ.get('DJANGO_DB_NAME')
+DB_HOST = os.environ.get('DJANGO_DB_HOST')
+DB_MECH = os.environ.get('DJANGO_DB_MECH')
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
         'CLIENT': {
             "host": DB_NAME,
             "name": DB_HOST,
-            'authMechanism': "SCRAM-SHA-1"
+            'authMechanism': DB_MECH
         }
     }
 }
