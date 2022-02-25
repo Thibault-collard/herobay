@@ -11,7 +11,7 @@ from .dev import *
 DEBUG = bool(os.environ.get('DJANGO_DEBUG', ''))
 
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', SECRET_KEY)
-DB_NAME = os.environ.get('DJANGO_DB_NAME')
+DB_NAME = 'herobay'
 DB_HOST = os.environ.get('DJANGO_DB_HOST')
 DB_MECH = os.environ.get('DJANGO_DB_MECH')
 DB_USERNAME = os.environ.get('DJANGO_DB_USERNAME')
