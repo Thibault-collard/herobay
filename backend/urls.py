@@ -14,7 +14,10 @@ router = routers.DefaultRouter()
 
 urlpatterns = [
 
-    path('', get_data_heroes),
+    # http://localhost:8000/
+    path('api/all_heroes', get_data_heroes),
+
+    path('/', include(router.urls)),
 
     # http://localhost:8000/api/admin/
     path('api/admin/', admin.site.urls),
