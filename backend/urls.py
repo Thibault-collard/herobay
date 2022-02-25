@@ -18,7 +18,7 @@ urlpatterns = [
     path('api/all_heroes', get_data_heroes),
 
     path('api', include(router.urls)),
-    path('', TemplateView.as_view(template_name='../src/components/VueDemo.vue'), name='app'),
+    path('', TemplateView.as_view(template_name="index.html")),
     # http://localhost:8000/api/admin/
     path('api/admin/', admin.site.urls),
 ]
