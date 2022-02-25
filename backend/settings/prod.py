@@ -11,16 +11,15 @@ from .dev import *
 DEBUG = bool(os.environ.get('DJANGO_DEBUG', ''))
 
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', SECRET_KEY)
-DB_NAME = os.environ.get('DJANGO_DB_NAME')
-DB_HOST = os.environ.get('DJANGO_DB_HOST')
-DB_MECH = os.environ.get('DJANGO_DB_MECH')
+DJANGO_SECRET_KEY='verybadsecret!!!'
+
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
         'CLIENT': {
-            "host": DB_NAME,
-            "name": DB_HOST,
-            'authMechanism': DB_MECH
+            "host": 'herobay',
+            "name": 'mongodb+srv://admin:reims@cluster0.lb1h9.mongodb.net/herobay?retryWrites=true&w=majority',
+            'authMechanism': 'SCRAM-SHA-1'
         }
     }
 }
