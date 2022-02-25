@@ -1,8 +1,8 @@
 const IS_PRODUCTION = process.env.NODE_ENV === 'production'
 
 module.exports = {
-    outputDir: '/dist/',
-    assetsDir: '/dist/static/',
+    outputDir: 'dist',
+    assetsDir: 'static',
     publicPath: IS_PRODUCTION ? 'herobay.herokuapp.com': '/',
     // For Production, replace set baseUrl to CDN
     // And set the CDN origin to `yourdomain.com/static`
