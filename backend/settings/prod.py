@@ -11,7 +11,7 @@ from .dev import *
 DEBUG = bool(os.environ.get('DJANGO_DEBUG', ''))
 
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', SECRET_KEY)
-DB_NAME = 'herobay'
+DB_NAME = os.environ.get('DJANGO_DB_NAME')
 DB_HOST = os.environ.get('DJANGO_DB_HOST')
 DB_MECH = os.environ.get('DJANGO_DB_MECH')
 DB_USERNAME = os.environ.get('DJANGO_DB_USERNAME')
@@ -21,10 +21,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'djongo',
         'CLIENT': {
-            "host": DB_NAME,
+            "host": DB_HOST,
             "username": DB_USERNAME,
             "password":DB_PASSWORD,
-            "name": DB_HOST,
+            "name": DB_NAME,
             'authMechanism': DB_MECH
         }
     }
