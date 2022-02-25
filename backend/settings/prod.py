@@ -36,6 +36,7 @@ BASE_DIR = os.path.dirname(SETTINGS_DIR)
 
 INSTALLED_APPS = [
     'django.contrib.admin',
+    'vue_app.apps.VueAppConfig'
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
