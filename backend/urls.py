@@ -9,16 +9,15 @@ from django.urls import path, include
 from rest_framework import routers
 
 from .api.views import get_data_heroes
-from django.views.generic import TemplateView
+from api import views as myapp_views
 router = routers.DefaultRouter()
 
 urlpatterns = [
 
     # http://localhost:8000/
     path('api/all_heroes', get_data_heroes),
-
     path('api', include(router.urls)),
-    path('', TemplateView.as_view(template_name="index.html")),
+    path('vue-test', myapp_views.vue_test),
     # http://localhost:8000/api/admin/
     path('api/admin/', admin.site.urls),
 ]

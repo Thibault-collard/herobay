@@ -10,6 +10,9 @@ from .models import Heroes, HeroesSerializer
 
 @csrf_exempt
 
+def vue_test(request):
+    return render(request,'../../dist/index.html')
+
 def get_data_heroes(request,id=0):
     
     if request.method == 'GET':
