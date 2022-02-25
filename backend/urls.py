@@ -9,7 +9,7 @@ from django.urls import path, include
 from rest_framework import routers
 
 from .api.views import get_data_heroes
-
+from django.views.generic import TemplateView
 router = routers.DefaultRouter()
 
 urlpatterns = [
@@ -18,7 +18,7 @@ urlpatterns = [
     path('api/all_heroes', get_data_heroes),
 
     path('api', include(router.urls)),
-
+    path('', TemplateView.as_view(template_name='../dist/index.html'), name='app'),
     # http://localhost:8000/api/admin/
     path('api/admin/', admin.site.urls),
 ]
