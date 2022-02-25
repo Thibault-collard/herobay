@@ -8,8 +8,8 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
 
-from .api.views import get_data_heroes
-from api import views as myapp_views
+from .api.views import *
+
 router = routers.DefaultRouter()
 
 urlpatterns = [
@@ -17,7 +17,7 @@ urlpatterns = [
     # http://localhost:8000/
     path('api/all_heroes', get_data_heroes),
     path('api', include(router.urls)),
-    path('vue-test', myapp_views.vue_test),
+    path('vue-test', vue_test),
     # http://localhost:8000/api/admin/
     path('api/admin/', admin.site.urls),
 ]
