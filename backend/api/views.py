@@ -1,17 +1,17 @@
 import ssl
 import certifi
 from django.shortcuts import render
+from django.views.generic import TemplateView
 from django.views.decorators.csrf import csrf_exempt
-
+from django.views.decorators.cache import never_cache
 from rest_framework.parsers import JSONParser
 from django.http.response import JsonResponse
 
 from .models import Heroes, HeroesSerializer
 
-@csrf_exempt
+index_view = never_cache(TemplateView.as_view(template_name='index.html'))
 
-def vue_test(request):
-    return render(request,'../../dist/index.html')
+@csrf_exempt
 
 def get_data_heroes(request,id=0):
     
