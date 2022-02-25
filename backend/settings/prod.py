@@ -13,6 +13,7 @@ DEBUG = bool(os.getenv('DJANGO_DEBUG', ''))
 SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', SECRET_KEY)
 DB_NAME = os.getenv('DJANGO_DB_NAME')
 DB_HOST = os.getenv('DJANGO_DB_HOST')
+DB_MECH = os.getenv('DJANGO_DB_MECH')
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
