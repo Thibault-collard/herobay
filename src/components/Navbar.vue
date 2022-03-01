@@ -1,26 +1,26 @@
 <script>
-/* import the fontawesome core */
-import Vue from 'vue'
-import { library } from '@fortawesome/fontawesome-svg-core'
+    /* import the fontawesome core */
+    import Vue from 'vue'
+    import { library } from '@fortawesome/fontawesome-svg-core'
 
-/* import specific icons */
-import {faSearch,faShoppingCart } from '@fortawesome/free-solid-svg-icons'
+    /* import specific icons */
+    import {faSearch,faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 
-/* import font awesome icon component */
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+    /* import font awesome icon component */
+    import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
-/* add icons to the library */
-library.add(faSearch,faShoppingCart)
+    /* add icons to the library */
+    library.add(faSearch,faShoppingCart)
 
-/* add font awesome icon component */
-Vue.component('font-awesome-icon', FontAwesomeIcon)
+    /* add font awesome icon component */
+    Vue.component('font-awesome-icon', FontAwesomeIcon)
 
-export default {
-  name: 'Navbar',
-  props: {
+    export default {
+        name: 'Navbar',
+        props: {
 
-  }
-}
+        }
+    }
 </script>
 <template>
     <header class="section-header">
@@ -92,15 +92,15 @@ export default {
     </header>
 </template>
 <style scoped>
-.logoherobay {
-  width: 111px;
-  margin-bottom:16px
-}
-.btn-search{
-    color: #fff;
-    background-color: #27007f;
-}
-.cart-navbar{
-    background-color: #27007f;
-}
+    .logoherobay {
+    width: 111px;
+    margin-bottom:16px
+    }
+    .btn-search{
+        color: #fff;
+        background-color: #27007f;
+    }
+    .cart-navbar{
+        background-color: #27007f;
+    }
 </style>

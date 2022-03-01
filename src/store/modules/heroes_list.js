@@ -1,0 +1,41 @@
+import heroesService from '../../services/heroesService'
+// import dependency to handle HTTP request to our back end
+
+import Vuex from 'vuex'
+import Vue from 'vue'
+
+//load Vuex
+Vue.use(Vuex);
+
+const state = {
+  list_heroes: ""
+}
+
+const getters = {
+  all_heroes: state => {
+    return state.list_heroes
+  }
+}
+
+const actions = {
+  getHeroesList ({ commit }) {
+    heroesService.fetchHeroesList()
+    .then(function(response) {
+      commit('setHeroesList', response)
+    })
+  }
+}
+
+const mutations = {
+  setHeroesList (state, list_heroes) {
+    state.list_heroes = list_heroes
+  }
+  
+}
+
+export default {
+  state,
+  getters,
+  actions,
+  mutations
+}

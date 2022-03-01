@@ -1,11 +1,12 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import messages from './modules/messages'
+import list_heroes from './modules/heroes_list'
 
 Vue.use(Vuex)
 
-export default new Vuex.Store({
+export const store = new Vuex.Store({
   modules: {
-    messages
+    list_heroes
   }
 })
+
