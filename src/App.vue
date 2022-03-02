@@ -8,11 +8,12 @@
 <script>
   import Navbar from './components/Navbar.vue'
   import GridHeroes from './components/GridHeroes.vue'
-
+  import Cart from './components/Cart.vue'
   export default {
     components: {
       Navbar,
-      GridHeroes
+      GridHeroes,
+      Cart
     }
   }
 

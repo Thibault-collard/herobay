@@ -29,8 +29,7 @@ const actions = {
 const mutations = {
   setHeroesList (state, list_heroes) {
     state.list_heroes = list_heroes
-  }
-  
+  } 
 }
 
 export default {

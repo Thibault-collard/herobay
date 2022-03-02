@@ -2,23 +2,33 @@
     /* import the fontawesome core */
     import Vue from 'vue'
     import { library } from '@fortawesome/fontawesome-svg-core'
-
+    import Cart from './Cart'
     /* import specific icons */
-    import {faSearch,faShoppingCart } from '@fortawesome/free-solid-svg-icons'
+    import {faSearch,faShoppingCart,faTrash } from '@fortawesome/free-solid-svg-icons'
 
     /* import font awesome icon component */
     import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
     /* add icons to the library */
-    library.add(faSearch,faShoppingCart)
+    library.add(faSearch,faShoppingCart,faTrash)
 
     /* add font awesome icon component */
     Vue.component('font-awesome-icon', FontAwesomeIcon)
 
     export default {
         name: 'Navbar',
-        props: {
-
+        components: {
+            Cart,
+        },
+        data(){
+            return {
+                showModal:false
+            }
+        },
+        methods: {
+            toggleCart () {
+                this.showModal = !this.showModal;
+            }
         }
     }
 </script>
@@ -26,27 +36,26 @@
     <header class="section-header">
     <section class="header-main border-bottom">
         <div class="container">
-    <div class="row align-items-center mb-3">
-        <div class="col-lg-2 col-4">
-            <img src='@/assets/logo-herobay.png' class="logoherobay"/>
-        </div>
-        <div class="col-lg-6 col-sm-12">
-            <form action="#" class="search">
-                <div class="input-group w-100">
-                    <input type="text" class="form-control" placeholder="Search">
-                    <div class="input-group-append">
-                      <button class="btn btn-search" type="submit">
-                        <font-awesome-icon icon="fa fa-search"/>
-                      </button>
-                    </div>
+            <div class="row align-items-center mb-3">
+                <div class="col-lg-2 col-4">
+                    <img src='@/assets/logo-herobay.png' class="logoherobay"/>
                 </div>
-            </form>
-        </div>
-    </div>
+                <div class="col-lg-6 col-sm-12">
+                    <form action="#" class="search">
+                        <div class="input-group w-100">
+                            <input type="text" class="form-control" placeholder="Search">
+                            <div class="input-group-append">
+                            <button class="btn btn-search" type="submit">
+                                <font-awesome-icon icon="fa fa-search"/>
+                            </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
     </section> 
-    
-    
+
     <div class="row">
         <div class="col-11">
             <nav class="navbar navbar-main navbar-expand-lg navbar-light border-bottom">
@@ -85,9 +94,11 @@
                 </div> 
             </nav>
         </div>
-        <div class="col cart-navbar">
-            <a href="#" class="icon icon-sm"><font-awesome-icon class="mt-3" color="white" icon="fa fa-shopping-cart" size="lg"/></a>
+        <div class="col cart-navbar" style="z-index:3">
+            <span class="count mt-2 ms-3" @click="toggleCart()"> {{ $store.state.shopping_cart.cartCount }} </span>
+            <a href="#" class="icon icon-sm" @click="toggleCart()"><font-awesome-icon class="mt-3" color="white" icon="fa fa-shopping-cart" size="lg"/></a>
         </div>
+        <cart v-if="showModal" />
     </div>
     </header>
 </template>
@@ -102,5 +113,18 @@
     }
     .cart-navbar{
         background-color: #27007f;
+    }
+    
+    .count{
+        z-index: 2;
+        font-size: 11px;
+        border-radius: 50%;
+        background: mediumvioletred;
+        width: 16px;
+        height: 16px;
+        position:absolute;
+        color: #fff;
+        font-family: Roboto,sans-serif;
+        font-weight: 700;
     }
 </style>

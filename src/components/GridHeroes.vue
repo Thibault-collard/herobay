@@ -8,7 +8,7 @@
                     <img class="pic-2" v-bind:src="'https://res.cloudinary.com/dn8xazq0z/image/upload/v1646117130/herobay/' + hr.img_2" />     
                         <ul class="social">
                             <li><a href="#" data-tip="Quick View"><font-awesome-icon icon="fa fa-eye"/></a></li>
-                            <li><a href="#" data-tip="Add to Cart"><font-awesome-icon icon="fa fa-shopping-cart"/></a></li>
+                            <li><a href="#" @click="addToCart(hr)" data-tip="Add to Cart"><font-awesome-icon icon="fa fa-shopping-cart"/></a></li>
                         </ul>
                     </div>
                     <div class="product-content">
@@ -45,17 +45,19 @@
         name: "GridHeroes",
         data() {
             return {
-                msg: 'Welcome to my Vuex Store'
             };
+        },
+        methods: {
+            addToCart(item) {
+                this.$store.commit('addToCart', item);
+            }
         },
         computed: {
             list_heroes() {
-                console.log(this.$store.state.list_heroes.list_heroes)
                 return this.$store.state.list_heroes.list_heroes
             }
         },
         mounted() {
-            console.log(this.$store.dispatch("getHeroesList"))
             return this.$store.dispatch("getHeroesList");
         }
     };
@@ -93,7 +95,7 @@
 
     .product-grid2 .product-image2 img {
         width: 100%;
-        height: 80vh;
+        height: 350px;
     }
 
     .product-image2 .pic-1 {
