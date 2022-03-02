@@ -1,6 +1,6 @@
 import Vuex from 'vuex'
 import Vue from 'vue'
-
+import { get1offer } from '../../services/promo_code.js'
 //load Vuex
 Vue.use(Vuex);
 
@@ -15,6 +15,7 @@ const state = {
 }
 
 const mutations = {
+
     addToCart(state, item) {
         
         let found = state.cart.find(product => product.superhero == item.superhero);
@@ -32,6 +33,7 @@ const mutations = {
     },
     saveCart(state) {
         this.commit('getTotalPrice')
+        console.log(state)
         window.localStorage.setItem('cart', JSON.stringify(state.cart));
         window.localStorage.setItem('cartCount', state.cartCount);
         window.localStorage.setItem('cartTotal', state.cartTotal);
@@ -63,10 +65,14 @@ const mutations = {
         this.commit('saveCart');
     },getTotalPrice(state){
         let total = 0;
+        let get1free = true;
         for (let item of state.cart) {
             total += Number(item.totalPrice);
         }
-        
+
+        if(get1free == true){
+            total = get1offer(state, total)
+        }
         if (total > 0) {
             state.cartTotal = Number(total).toFixed(2);
             return Number(total).toFixed(2);

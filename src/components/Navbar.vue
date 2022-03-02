@@ -100,6 +100,7 @@
         </div>
         <cart v-if="showModal" />
     </div>
+        <div class="alert alert-secondary" style="padding: 0.5rem" role="alert"> TODAY SPECIAL OFFER : Hire your favorite superheroes for 2 hours and get 1 hour free !  </div>
     </header>
 </template>
 <style scoped>
