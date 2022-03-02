@@ -3,7 +3,7 @@
         <div class="row">
             <div v-for='hr in list_heroes' class="col-md-3 col-sm-6">
                 <div class="product-grid2">
-                    <div class="product-image2"> <a href="#"> 
+                    <div class="product-image2"> <a href="#">
                     <img class="pic-1" v-bind:src="'https://res.cloudinary.com/dn8xazq0z/image/upload/v1646117130/herobay/' + hr.img_1" /> 
                     <img class="pic-2" v-bind:src="'https://res.cloudinary.com/dn8xazq0z/image/upload/v1646117130/herobay/' + hr.img_2" />     
                         <ul class="social">
@@ -13,6 +13,7 @@
                     </div>
                     <div class="product-content">
                         <h3 class="title"><a href="#">{{hr.superhero}}</a></h3> <span class="price">{{hr.price}} $/h</span>
+                        <div class="badge-promo" v-if="hr.promo_perc"> - {{hr.promo_perc}} % </div> 
                     </div>
                 </div>
             </div>
@@ -67,7 +68,21 @@
     .container {
         margin-top: 50px
     }
-
+    .badge-promo{
+        background-color: #c71585;
+        border-radius: 10px;
+        color: white;
+        display: inline-block;
+        font-size: 12px;
+        line-height: 1;
+        padding: 3px 7px;
+        text-align: center;
+        vertical-align: middle;
+        white-space: nowrap;
+        width: 20%;
+        margin-left:10px;
+        font-weight: bold;
+    }
     h3.h3 {
         text-align: center;
         margin: 1em;

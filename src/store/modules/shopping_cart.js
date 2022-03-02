@@ -66,8 +66,9 @@ const mutations = {
         for (let item of state.cart) {
             total += Number(item.totalPrice);
         }
-        state.cartTotal = total;
+        
         if (total > 0) {
+            state.cartTotal = Number(total).toFixed(2);
             return Number(total).toFixed(2);
         }  
     }

@@ -28,6 +28,11 @@ const actions = {
 
 const mutations = {
   setHeroesList (state, list_heroes) {
+    for (let heroes of list_heroes) {
+      if(heroes.promo_perc){
+        heroes.price = (heroes.price * (100 - Number(heroes.promo_perc))/100).toFixed(2)
+      }
+    }
     state.list_heroes = list_heroes
   } 
 }

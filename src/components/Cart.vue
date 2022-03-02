@@ -53,7 +53,7 @@
                         </div>
                     </div>
                 </a>
-                <div class="shopping-cart-total w-50">
+                <div class="shopping-cart-total">
                     <span class="lighter-text">Total:</span>
                     <span class="main-color-text"> {{ totalPrice }} $/hour</span>
                 </div>  

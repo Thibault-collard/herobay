@@ -10,8 +10,9 @@ class Heroes(models.Model):
     price = models.TextField()
     img_1 = models.TextField()
     img_2 = models.TextField()
+    promo_perc = models.TextField()
 
 class HeroesSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Heroes
-        fields = ('img_1','img_2','superhero', 'publisher',"alter_ego","first_appearance","characters","price")
+        fields = ('promo_perc','img_1','img_2','superhero', 'publisher',"alter_ego","first_appearance","characters","price")
