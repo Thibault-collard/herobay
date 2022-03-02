@@ -2,7 +2,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/Thibault-collard/herobay">
-    <img src="./assets/screenshot-herobay.png" alt="Logo" height="600">
+    <img src="/src/assets/screenshot-herobay.png" alt="Logo" height="600">
   </a>
 
   <h3 align="center"> Herobay </h3>
