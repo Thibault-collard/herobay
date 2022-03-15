@@ -1,8 +1,8 @@
 function get1offer(state,total){
     let list_price = [];
 
-    if(state.cartCount > 0 & state.cartCount % 3 == 0){
-        let countgift = state.cartCount / 3
+    if(state.cartCount > 0){
+        let countgift = Math.floor(state.cartCount / 3)
         for (let item of state.cart) {
             list_price.push(Array(item.quantity).fill(Number(item.price)))
         }

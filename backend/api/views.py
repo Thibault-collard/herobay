@@ -36,6 +36,6 @@ def get_data_heroes(request,id=0):
             return JsonResponse("Hero added to database",safe=False)
         return JsonResponse("Failed to update",safe=False)
     elif request.method == 'DELETE':
-        heroes = heroes=Heroes.objects.get(HeroesId=id)
+        heroes=Heroes.objects.get(HeroesId=id)
         heroes.delete()
         return JsonResponse('Deleted Succesfully',safe=False)
